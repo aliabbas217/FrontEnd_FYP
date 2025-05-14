@@ -27,6 +27,7 @@ model Products {
   Colors      Colors      @relation(fields: [ColorId], references: [Id], onDelete: Cascade, onUpdate: NoAction, map: "FK_Products_Colors_ColorId")
   Sizes       Sizes       @relation(fields: [SizeId], references: [Id], onDelete: Cascade, onUpdate: NoAction, map: "FK_Products_Sizes_SizeId")
   Stores      Stores      @relation(fields: [StoreId], references: [Id], onDelete: Cascade, onUpdate: NoAction, map: "FK_Products_Stores_StoreId")
+  embeddingID String?
 
   @@index([StoreId], map: "IX_Products_StoreId")
   @@index([SizeId], map: "IX_Products_SizeId")
